@@ -16,4 +16,9 @@
         android:title="Settings"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_settings_24"/>
+    <item
+        android:id="@+id/group_chatroom_menu"
+        android:title="@string/group_chat"
+        android:icon="@drawable/ic_baseline_groups_24"
+        app:showAsAction="ifRoom"/>
 </menu>

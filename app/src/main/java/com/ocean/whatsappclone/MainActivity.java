@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.custom_menu, menu);
+        menu.findItem(R.id.group_chatroom_menu).setIcon(R.drawable.ic_baseline_groups_24).setVisible(true);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
                 finish();
+                break;
+            case R.id.group_chatroom_menu:
+                startActivity(new Intent(MainActivity.this, GroupChatRoomActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -3,60 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/users_recycler_item"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:background="#46B388FF"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            app:civ_border_color="#B9F6CA"
-            app:civ_border_width="2dp"
-            android:background="@drawable/ic_baseline_person_24"/>
+            android:background="@drawable/ic_baseline_person_24"
+            app:civ_border_color="#00B9F6CA"
+            app:civ_border_width="2dp" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_margin="5dp">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="31dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/tv_user_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
                     android:text="Receiver's Name"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
+                    android:singleLine="true"
                     android:textAlignment="viewStart"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"/>
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight=".3"/>
 
                 <TextView
                     android:id="@+id/tv_last_interaction_time_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
                     android:text="LastInteraction-Time/Date"
+                    android:textAlignment="textEnd"
                     android:textSize="9sp"
-                    android:padding="5dp"
-                    android:textAlignment="viewEnd"/>
+                    android:layout_weight=".7"/>
             </LinearLayout>
 
             <TextView
@@ -64,10 +66,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Last Messages"
-                android:textSize="15dp"
-                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:singleLine="true"
                 android:textAlignment="gravity"
-                android:padding="8dp"/>
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
         </LinearLayout>
     </LinearLayout>

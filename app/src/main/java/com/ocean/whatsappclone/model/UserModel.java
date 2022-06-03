@@ -28,6 +28,10 @@ public class UserModel {
         this.password = password;
     }
 
+    public String getUserID() {
+        return userID;
+    }
+
     public String getProfilePic() {
         return profilePic;
     }
@@ -60,10 +64,6 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getUserID() {
-        return userID;
-    }
-
     public void setUserID(String userID) {
         this.userID = userID;
     }
@@ -74,5 +74,9 @@ public class UserModel {
 
     public void setLastMsg(String lastMsg) {
         this.lastMsg = lastMsg;
+    }
+
+    public String getUserID(String key) {
+        return userID;
     }
 }

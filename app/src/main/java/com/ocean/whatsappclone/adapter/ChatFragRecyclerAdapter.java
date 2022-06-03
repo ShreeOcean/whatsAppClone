@@ -1,6 +1,8 @@
 package com.ocean.whatsappclone.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ocean.whatsappclone.ChatRoomActivity;
 import com.ocean.whatsappclone.R;
 import com.ocean.whatsappclone.databinding.CustomRecyclerviewChatLayoutBinding;
 import com.ocean.whatsappclone.model.UserModel;
@@ -18,12 +21,13 @@ import java.util.ArrayList;
 public class ChatFragRecyclerAdapter extends RecyclerView.Adapter<ChatFragRecyclerAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList<UserModel> list;
+    private ArrayList<UserModel> list; //= new ArrayList<>()
 
-    public ChatFragRecyclerAdapter(Context context, ArrayList<UserModel> list) {
-        this.context = context;
+    public ChatFragRecyclerAdapter(ArrayList<UserModel> list, Context context) {
         this.list = list;
+        this.context = context;
     }
+
 
     @NonNull
     @Override
@@ -44,11 +48,22 @@ public class ChatFragRecyclerAdapter extends RecyclerView.Adapter<ChatFragRecycl
 
         //TODO: last message code to be done after chat room code
 
+        holder.binding.usersRecyclerItem.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ChatRoomActivity.class);
+            intent.putExtra("userID", userModel.getUserID());
+            intent.putExtra("profileDP", userModel.getProfilePic());
+            intent.putExtra("userName", userModel.getUserName());
+            context.startActivity(intent);
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+            return list.size();
+
+//        return 0;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
