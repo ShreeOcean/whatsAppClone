@@ -45,6 +45,7 @@ public class ChatRoomActivity extends AppCompatActivity implements View.OnClickL
     ShareActionProvider shareActionProvider;
     String TAG = "ChatRoomActivity : --";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
